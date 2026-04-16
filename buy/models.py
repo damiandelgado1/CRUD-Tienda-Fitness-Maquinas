@@ -10,12 +10,12 @@ class Buy(models.Model):
         return f"Producto {self.product} comprado por {self.client}"
 
     # Client make the shop a product
-    def make_shop(name):
-        product_buy = input("Indique el Producto que quiere comprar ")
-        buy = Buy.objects.create(client=name, product=product_buy)
+    def make_shop(name, product):
+        # product_buy = input("Indique el Producto que quiere comprar ")
+        buy = Buy.objects.create(client=name, product=product)
 
         buy.save()
-        print(f"El cliente {name} ha comprado el Producto {product_buy}")
+        print(f"El cliente {name} ha comprado el Producto {product}")
 
     # Client request a Product's availability
     def products_availability():
